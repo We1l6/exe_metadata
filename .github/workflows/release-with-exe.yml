@@ -41,7 +41,7 @@ jobs:
       with:
         name: release-exe
         path: |
-            ${{github.workspace}}/build/Release/Release.exe
+            ${{github.workspace}}/build/Release/main.exe
         
   publish:
     name: Publish release
@@ -59,4 +59,4 @@ jobs:
         if: startsWith(github.ref, 'refs/tags/v')
         with:
           files: |
-            Release.exe
+            main.exe
