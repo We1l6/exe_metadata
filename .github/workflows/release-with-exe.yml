@@ -29,12 +29,7 @@ jobs:
     - name: Build
       # Build your program with the given configuration
       run: cmake --build ${{github.workspace}}/build --config ${{env.BUILD_TYPE}}
-      
-  test:
-    name: Run tests
-    runs-on: windows-latest
-    needs: build
-    steps:
+
     - name: Run ctest
       working-directory: ${{github.workspace}}/build
       # Execute tests defined by the CMake configuration.
@@ -44,7 +39,7 @@ jobs:
   publish:
     name: Publish .exe
     runs-on: windows-latest
-    needs: [build, test]
+    needs: build
     steps:
       - name: Checkout
         uses: actions/checkout@v3
