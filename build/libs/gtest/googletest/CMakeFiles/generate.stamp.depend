@@ -1,0 +1,13 @@
+# CMake generation dependency list for this directory.
+D:/Programing/C++ programing/exe_metadata/build/CMakeFiles/3.28.0/CMakeCCompiler.cmake
+D:/Programing/C++ programing/exe_metadata/libs/gtest/googletest/CMakeLists.txt
+D:/Programs/CMake/share/cmake-3.28/Modules/CMakeCInformation.cmake
+D:/Programs/CMake/share/cmake-3.28/Modules/CMakeCommonLanguageInclude.cmake
+D:/Programs/CMake/share/cmake-3.28/Modules/CMakeDependentOption.cmake
+D:/Programs/CMake/share/cmake-3.28/Modules/CMakeLanguageInformation.cmake
+D:/Programs/CMake/share/cmake-3.28/Modules/Compiler/CMakeCommonCompilerMacros.cmake
+D:/Programs/CMake/share/cmake-3.28/Modules/Compiler/MSVC-C.cmake
+D:/Programs/CMake/share/cmake-3.28/Modules/Compiler/MSVC.cmake
+D:/Programs/CMake/share/cmake-3.28/Modules/GNUInstallDirs.cmake
+D:/Programs/CMake/share/cmake-3.28/Modules/Platform/Windows-MSVC-C.cmake
+D:/Programs/CMake/share/cmake-3.28/Modules/Platform/Windows-MSVC.cmake

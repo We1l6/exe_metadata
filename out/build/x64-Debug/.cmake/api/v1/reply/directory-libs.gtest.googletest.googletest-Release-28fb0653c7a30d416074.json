@@ -1,0 +1,203 @@
+{
+	"backtraceGraph" : 
+	{
+		"commands" : 
+		[
+			"install",
+			"install_project"
+		],
+		"files" : 
+		[
+			"libs/gtest/googletest/googletest/CMakeLists.txt",
+			"libs/gtest/googletest/googletest/cmake/internal_utils.cmake"
+		],
+		"nodes" : 
+		[
+			{
+				"file" : 0
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 97,
+				"parent" : 0
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 104,
+				"parent" : 0
+			},
+			{
+				"command" : 1,
+				"file" : 0,
+				"line" : 158,
+				"parent" : 0
+			},
+			{
+				"command" : 0,
+				"file" : 1,
+				"line" : 299,
+				"parent" : 3
+			},
+			{
+				"command" : 0,
+				"file" : 1,
+				"line" : 303,
+				"parent" : 3
+			},
+			{
+				"command" : 0,
+				"file" : 1,
+				"line" : 315,
+				"parent" : 3
+			},
+			{
+				"command" : 0,
+				"file" : 1,
+				"line" : 315,
+				"parent" : 3
+			},
+			{
+				"command" : 0,
+				"file" : 1,
+				"line" : 327,
+				"parent" : 3
+			},
+			{
+				"command" : 0,
+				"file" : 1,
+				"line" : 327,
+				"parent" : 3
+			}
+		]
+	},
+	"installers" : 
+	[
+		{
+			"backtrace" : 1,
+			"component" : "gtest",
+			"destination" : "lib/cmake/GTest",
+			"exportName" : "GTestTargets",
+			"exportTargets" : 
+			[
+				{
+					"id" : "gtest::@5203c191d449dc9f5bc4",
+					"index" : 3
+				},
+				{
+					"id" : "gtest_main::@5203c191d449dc9f5bc4",
+					"index" : 4
+				},
+				{
+					"id" : "gmock::@a664916b9c6afcd9e10f",
+					"index" : 1
+				},
+				{
+					"id" : "gmock_main::@a664916b9c6afcd9e10f",
+					"index" : 2
+				}
+			],
+			"paths" : 
+			[
+				"libs/gtest/googletest/googletest/CMakeFiles/Export/0c08b8e77dd885bfe55a19a9659d9fc1/GTestTargets.cmake"
+			],
+			"type" : "export"
+		},
+		{
+			"backtrace" : 2,
+			"component" : "gtest",
+			"destination" : "lib/cmake/GTest",
+			"paths" : 
+			[
+				"out/build/x64-Debug/libs/gtest/googletest/googletest/generated/GTestConfigVersion.cmake",
+				"out/build/x64-Debug/libs/gtest/googletest/googletest/generated/GTestConfig.cmake"
+			],
+			"type" : "file"
+		},
+		{
+			"backtrace" : 4,
+			"component" : "gtest",
+			"destination" : "include",
+			"paths" : 
+			[
+				{
+					"from" : "libs/gtest/googletest/googletest/include",
+					"to" : "."
+				}
+			],
+			"type" : "directory"
+		},
+		{
+			"backtrace" : 5,
+			"component" : "gtest",
+			"destination" : "lib",
+			"paths" : 
+			[
+				"lib/gtest.lib"
+			],
+			"targetId" : "gtest::@5203c191d449dc9f5bc4",
+			"targetIndex" : 3,
+			"type" : "target"
+		},
+		{
+			"backtrace" : 5,
+			"component" : "gtest",
+			"destination" : "lib",
+			"paths" : 
+			[
+				"lib/gtest_main.lib"
+			],
+			"targetId" : "gtest_main::@5203c191d449dc9f5bc4",
+			"targetIndex" : 4,
+			"type" : "target"
+		},
+		{
+			"backtrace" : 6,
+			"component" : "gtest",
+			"destination" : "lib",
+			"isOptional" : true,
+			"paths" : 
+			[
+				"out/build/x64-Debug/bin/${CMAKE_INSTALL_CONFIG_NAME}/gtest.pdb"
+			],
+			"type" : "file"
+		},
+		{
+			"backtrace" : 7,
+			"component" : "gtest",
+			"destination" : "lib",
+			"isOptional" : true,
+			"paths" : 
+			[
+				"out/build/x64-Debug/bin/${CMAKE_INSTALL_CONFIG_NAME}/gtest_main.pdb"
+			],
+			"type" : "file"
+		},
+		{
+			"backtrace" : 8,
+			"component" : "gtest",
+			"destination" : "lib/pkgconfig",
+			"paths" : 
+			[
+				"out/build/x64-Debug/libs/gtest/googletest/googletest/generated/gtest.pc"
+			],
+			"type" : "file"
+		},
+		{
+			"backtrace" : 9,
+			"component" : "gtest",
+			"destination" : "lib/pkgconfig",
+			"paths" : 
+			[
+				"out/build/x64-Debug/libs/gtest/googletest/googletest/generated/gtest_main.pc"
+			],
+			"type" : "file"
+		}
+	],
+	"paths" : 
+	{
+		"build" : "libs/gtest/googletest/googletest",
+		"source" : "libs/gtest/googletest/googletest"
+	}
+}

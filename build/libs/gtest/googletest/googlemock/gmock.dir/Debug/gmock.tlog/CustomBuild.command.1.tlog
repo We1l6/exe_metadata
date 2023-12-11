@@ -1,0 +1,10 @@
+^D:\PROGRAMING\C++ PROGRAMING\EXE_METADATA\LIBS\GTEST\GOOGLETEST\GOOGLEMOCK\CMAKELISTS.TXT
+setlocal
+D:\Programs\CMake\bin\cmake.exe "-SD:/Programing/C++ programing/exe_metadata" "-BD:/Programing/C++ programing/exe_metadata/build" --check-stamp-file "D:/Programing/C++ programing/exe_metadata/build/libs/gtest/googletest/googlemock/CMakeFiles/generate.stamp"
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
