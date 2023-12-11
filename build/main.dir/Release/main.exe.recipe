@@ -2,10 +2,10 @@
 <Project>
   <ProjectOutputs>
     <ProjectOutput>
-      <FullPath>D:\Programing\C++ programing\GUI_COLLPROJ\build\x64\Release\ZERO_CHECK</FullPath>
+      <FullPath>D:\Programing\C++ programing\exe_metadata\build\x64\Release\ZERO_CHECK</FullPath>
     </ProjectOutput>
     <ProjectOutput>
-      <FullPath>D:\Programing\C++ programing\GUI_COLLPROJ\build\Release\main.exe</FullPath>
+      <FullPath>D:\Programing\C++ programing\exe_metadata\build\Release\main.exe</FullPath>
     </ProjectOutput>
   </ProjectOutputs>
   <ContentFiles />

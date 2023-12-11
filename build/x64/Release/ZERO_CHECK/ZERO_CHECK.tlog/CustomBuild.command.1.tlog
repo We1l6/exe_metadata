@@ -1,6 +1,6 @@
-^D:\PROGRAMING\C++ PROGRAMING\GUI_COLLPROJ\BUILD\CMAKEFILES\001C3824A6808432A718A9C06B38EBD4\GENERATE.STAMP.RULE
+^D:\PROGRAMING\C++ PROGRAMING\EXE_METADATA\BUILD\CMAKEFILES\A7DB979BDA3E895D85C8C3BA9F00E081\GENERATE.STAMP.RULE
 setlocal
-D:\Programs\CMake\bin\cmake.exe "-SD:/Programing/C++ programing/GUI_COLLPROJ" "-BD:/Programing/C++ programing/GUI_COLLPROJ/build" --check-stamp-list CMakeFiles/generate.stamp.list --vs-solution-file "D:/Programing/C++ programing/GUI_COLLPROJ/build/GUI_COLLPROJ.sln"
+D:\Programs\CMake\bin\cmake.exe "-SD:/Programing/C++ programing/exe_metadata" "-BD:/Programing/C++ programing/exe_metadata/build" --check-stamp-list CMakeFiles/generate.stamp.list --vs-solution-file "D:/Programing/C++ programing/exe_metadata/build/exe_metadata.sln"
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone

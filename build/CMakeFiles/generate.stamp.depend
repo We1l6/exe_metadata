@@ -1,8 +1,8 @@
 # CMake generation dependency list for this directory.
-D:/Programing/C++ programing/GUI_COLLPROJ/CMakeLists.txt
-D:/Programing/C++ programing/GUI_COLLPROJ/build/CMakeFiles/3.28.0/CMakeCXXCompiler.cmake
-D:/Programing/C++ programing/GUI_COLLPROJ/build/CMakeFiles/3.28.0/CMakeRCCompiler.cmake
-D:/Programing/C++ programing/GUI_COLLPROJ/build/CMakeFiles/3.28.0/CMakeSystem.cmake
+D:/Programing/C++ programing/exe_metadata/CMakeLists.txt
+D:/Programing/C++ programing/exe_metadata/build/CMakeFiles/3.28.0/CMakeCXXCompiler.cmake
+D:/Programing/C++ programing/exe_metadata/build/CMakeFiles/3.28.0/CMakeRCCompiler.cmake
+D:/Programing/C++ programing/exe_metadata/build/CMakeFiles/3.28.0/CMakeSystem.cmake
 D:/Programs/CMake/share/cmake-3.28/Modules/CMakeCXXCompiler.cmake.in
 D:/Programs/CMake/share/cmake-3.28/Modules/CMakeCXXCompilerABI.cpp
 D:/Programs/CMake/share/cmake-3.28/Modules/CMakeCXXInformation.cmake
