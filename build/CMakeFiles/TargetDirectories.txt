@@ -1,0 +1,3 @@
+D:/Programing/C++ programing/GUI_COLLPROJ/build/CMakeFiles/main.dir
+D:/Programing/C++ programing/GUI_COLLPROJ/build/CMakeFiles/ALL_BUILD.dir
+D:/Programing/C++ programing/GUI_COLLPROJ/build/CMakeFiles/ZERO_CHECK.dir
