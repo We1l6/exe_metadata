@@ -23,12 +23,16 @@ static std::vector<char> ReadAllBytes(char const* filename)
 }
 
 int main() {
-	char filename[] = "";
-	std::cin >> filename;
 
-	std::vector<char> FileBytes = ReadAllBytes(filename);
+	char filepath[] = "";
 
-	for (long long int i = 0; i < FileBytes.size(); i++){
+	std::cout << "Enter filepath:" << std::endl;
+	std::cout << "> " << std::endl;
+	std::cin >> filepath;
+
+	std::vector<char> FileBytes = ReadAllBytes(filepath);
+
+	for (long long int i = 0; i < FileBytes.size(); i++) {
 		std::cout << FileBytes[i];
 	}
 
