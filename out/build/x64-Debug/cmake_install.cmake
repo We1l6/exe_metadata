@@ -1,8 +1,8 @@
-# Install script for directory: D:/Programing/C++ programing/exe_metadata
+# Install script for directory: C:/Users/miguelfox/source/repos/We1l6/exe_metadata
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "D:/Programing/C++ programing/exe_metadata/out/install/x64-Debug")
+  set(CMAKE_INSTALL_PREFIX "C:/Users/miguelfox/Source/Repos/We1l6/exe_metadata/out/install/x64-Debug")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
@@ -40,5 +40,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "D:/Programing/C++ programing/exe_metadata/out/build/x64-Debug/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "C:/Users/miguelfox/source/repos/We1l6/exe_metadata/out/build/x64-Debug/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")
