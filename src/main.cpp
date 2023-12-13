@@ -3,8 +3,8 @@
 #include <windows.h>
 #include <vector>
 
-static std::vector<char> ReadAllBytes(char const* filename)
-{
+static std::vector<char> ReadAllBytes(char const* filename) {
+
 	std::ifstream ifs(filename, std::ios::binary | std::ios::ate);
 	std::ifstream::pos_type pos = ifs.tellg();
 
@@ -16,13 +16,15 @@ static std::vector<char> ReadAllBytes(char const* filename)
 
 	std::vector<char> result(pos);
 
-	ifs.seekg(0, std::ios::beg);	
+	ifs.seekg(0, std::ios::beg);
 	ifs.read(&result[0], pos);
 
 	return result;
+
 }
 
 static int WriteToFile(std::vector<char> FileBytes) {
+
 	std::ofstream ofs;
 	ofs.open("out.txt", std::ios::binary | std::ios::out);
 	for (unsigned long long int i = 0; i < FileBytes.size(); i++) {
@@ -30,13 +32,16 @@ static int WriteToFile(std::vector<char> FileBytes) {
 	}
 	ofs.close();
 	return 0;
+
 }
 
 static int WriteToTerminal(std::vector<char> FileBytes) {
+
 	for (unsigned long long int i = 0; i < FileBytes.size(); i++) {
 		std::cout << FileBytes[i];
 	}
 	return 0;
+
 }
 
 int main() {
@@ -53,4 +58,5 @@ int main() {
 	WriteToTerminal(FileBytes);
 
 	return 0;
+
 }
