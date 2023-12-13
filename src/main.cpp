@@ -3,7 +3,7 @@
 #include <windows.h>
 #include <vector>
 
-static std::vector<char> ReadAllBytes(char const* filename) {
+static std::vector<char> ReadBinaryFile(char const* filename) {
 
 	std::ifstream ifs(filename, std::ios::binary | std::ios::ate);
 	std::ifstream::pos_type pos = ifs.tellg();
@@ -35,6 +35,8 @@ static int WriteToFile(std::vector<char> FileBytes) {
 
 }
 
+
+
 static int WriteToTerminal(std::vector<char> FileBytes) {
 
 	for (unsigned long long int i = 0; i < FileBytes.size(); i++) {
@@ -52,7 +54,7 @@ int main() {
 	std::cout << "> ";
 	std::cin >> filepath;
 
-	std::vector<char> FileBytes = ReadAllBytes(filepath);
+	std::vector<char> FileBytes = ReadBinaryFile(filepath);
 
 	WriteToFile(FileBytes);
 	WriteToTerminal(FileBytes);
