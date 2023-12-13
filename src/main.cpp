@@ -1,12 +1,13 @@
 #include <iostream>
 #include <fstream>
 #include <sstream>
-#include <windows.h>
+// #include <windows.h>
 #include <vector>
 #include <string>
 #include <iomanip>
 
-static std::vector<char> ReadBinaryFile(char const* filename) {
+
+std::vector<char> ReadBinaryFile(const std::string& filename) {
 
 	// create input filestream
 	std::ifstream ifs(filename, std::ios::binary | std::ios::ate);
@@ -36,7 +37,7 @@ static std::vector<char> ReadBinaryFile(char const* filename) {
 	
 }
 
-static int WriteToFile(std::vector<char> FileBytes) {
+int WriteToFile(std::vector<char> FileBytes) {
 
 	std::ofstream ofs;
 	ofs.open("out.txt", std::ios::binary | std::ios::out);
@@ -48,7 +49,7 @@ static int WriteToFile(std::vector<char> FileBytes) {
 
 }
 
-static int WriteToTerminal(std::vector<char> FileBytes) {
+int WriteToTerminal(std::vector<char> FileBytes) {
 
 	for (unsigned long long int i = 0; i < FileBytes.size(); i++) {
 		std::cout << FileBytes[i];
@@ -57,7 +58,7 @@ static int WriteToTerminal(std::vector<char> FileBytes) {
 
 }
 
-static std::string BytesToHex(std::vector<char> FileBytes) {
+std::string BytesToHex(std::vector<char> FileBytes) {
 	std::stringstream ss;
 	std::string HexString;
 
@@ -74,30 +75,35 @@ static std::string BytesToHex(std::vector<char> FileBytes) {
 
 }
 
-static int PrettyTerminalOutput(std::string OutputString) {
+int PrettyTerminalOutput(std::string OutputString) {
 	
 	unsigned long int string_len = OutputString.length();
-	std::string pretty_string;
-	
 	std::cerr << "Output string len is " << string_len;
 
-	unsigned short int ps_len = 0;
+    // let's insert spaces before iterating
 
-	for (unsigned long long int i = 0; i < string_len; i += 1) {
+    std::string pretty_string;
+    std::vector<std::string> pretty_string_vec = {};
+    for (size_t i = 0; i < string_len; i++) {
+        pretty_string += OutputString[i];
+        if (i % 2 == 0) {
+            pretty_string += " ";
+        }
+        if (i % 64 == 0) {
+            pretty_string_vec.push_back(pretty_string);
+            pretty_string = "";
+        }
+    }
 
-		pretty_string = pretty_string + OutputString[i];
-		ps_len = pretty_string.length();
+    // don't lose data in case of i not %64 at the end of string
+    pretty_string_vec.push_back(pretty_string);
+    pretty_string = "";
 
-		if (pretty_string.length() % 2 == 0) {
-			pretty_string = pretty_string + " ";
-		}
+    std::cerr << pretty_string_vec.size();
 
-		if (pretty_string.length() % 16 == 0) {
-			std::cout << pretty_string << std::endl;
-			pretty_string = "";
-		}
-
-	}
+    for (size_t i = 0; i < pretty_string_vec.size(); i++) {
+        std::cout << pretty_string_vec[i] << std::endl;
+    }
 
 	return 0;
 
@@ -105,7 +111,7 @@ static int PrettyTerminalOutput(std::string OutputString) {
 
 int main() {
 
-	char filepath[] = "";
+	std::string filepath;
 
 	std::cout << "Enter filepath:" << std::endl;
 	std::cout << "> ";
