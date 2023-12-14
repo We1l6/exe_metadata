@@ -75,34 +75,47 @@ std::string BytesToHex(std::vector<char> FileBytes) {
 
 }
 
-int PrettyTerminalOutput(std::string OutputString) {
+int PrettyTerminalOutput(std::string OutputString, std::vector<char> FileBytes) {
 	
-	unsigned long int string_len = OutputString.length();
-	std::cerr << "Output string len is " << string_len;
+	unsigned long int hex_string_len = OutputString.length();
+    unsigned long int bytes_vec_size = FileBytes.size();
+	std::cerr << "Output string len is " << hex_string_len << std::endl;
 
     // let's insert spaces before iterating
 
-    std::string pretty_string;
-    std::vector<std::string> pretty_string_vec = {};
-    for (size_t i = 0; i < string_len; i++) {
-        pretty_string += OutputString[i];
+    std::string hex_string;
+    std::string bytes_string;
+
+    std::vector<std::string> hex_string_vec = {};
+    std::vector<std::string> bytes_string_vec = {};
+
+    for (size_t i = 0; i < hex_string_len; i++) {
+        hex_string += OutputString[i];
         if (i % 2 == 0) {
-            pretty_string += " ";
+            hex_string += " ";
         }
-        if (i % 64 == 0) {
-            pretty_string_vec.push_back(pretty_string);
-            pretty_string = "";
+        if (i % 32 == 0) {
+            hex_string_vec.push_back(hex_string);
+            hex_string = "";
+        }
+    }
+
+    for (size_t i = 0; i < bytes_vec_size; i++) {
+        bytes_string += FileBytes[i];
+        if (i % 16 == 0) {
+            bytes_string_vec.push_back(bytes_string);
+            bytes_string = "";
         }
     }
 
     // don't lose data in case of i not %64 at the end of string
-    pretty_string_vec.push_back(pretty_string);
-    pretty_string = "";
+    hex_string_vec.push_back(hex_string);
+    hex_string = "";
 
-    std::cerr << pretty_string_vec.size();
+    std::cerr << hex_string_vec.size();
 
-    for (size_t i = 0; i < pretty_string_vec.size(); i++) {
-        std::cout << pretty_string_vec[i] << std::endl;
+    for (size_t i = 0; i < hex_string_vec.size(); i++) {
+        std::cout << hex_string_vec[i] << " " << bytes_string_vec[i] << std::endl;
     }
 
 	return 0;
@@ -122,7 +135,7 @@ int main() {
 	WriteToFile(FileBytes);
 	std::string HexString = BytesToHex(FileBytes);
 
-	PrettyTerminalOutput(HexString);
+	PrettyTerminalOutput(HexString, FileBytes);
 
 	return 0;
 
