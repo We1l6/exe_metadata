@@ -19,16 +19,17 @@ std::vector<char> ReadBinaryFile(const std::string& filename) {
 		if (pos == 0) {
 			return std::vector<char>{};
 		}
-		else {
+		else if (pos == -1) {
 			std::cerr << "ifs.tellg() returned -1." << std::endl;
-		}
+		} else {
+            std::vector<char> result(pos);
 
-		std::vector<char> result(pos);
+            ifs.seekg(0, std::ios::beg);
+            ifs.read(&result[0], pos);
 
-		ifs.seekg(0, std::ios::beg);
-		ifs.read(&result[0], pos);
+            return result;
+        }
 
-		return result;
 	}
 	else {
 		std::cerr << "File was not opened" << std::endl;
@@ -49,16 +50,8 @@ int WriteToFile(std::vector<char> FileBytes) {
 
 }
 
-int WriteToTerminal(std::vector<char> FileBytes) {
-
-	for (unsigned long long int i = 0; i < FileBytes.size(); i++) {
-		std::cout << FileBytes[i];
-	}
-	return 0;
-
-}
-
 std::string BytesToHex(std::vector<char> FileBytes) {
+
 	std::stringstream ss;
 	std::string HexString;
 
@@ -101,7 +94,15 @@ int PrettyTerminalOutput(std::string OutputString, std::vector<char> FileBytes) 
     }
 
     for (size_t i = 0; i < bytes_vec_size; i++) {
-        bytes_string += FileBytes[i];
+
+        // if ASCII code is less than 32 - that is control symbol
+        // we don't have to display them
+        if (FileBytes[i] < 32) {
+            bytes_string += ".";
+        } else {
+            bytes_string += FileBytes[i];
+        }
+
         if (i % 16 == 0) {
             bytes_string_vec.push_back(bytes_string);
             bytes_string = "";
@@ -112,10 +113,11 @@ int PrettyTerminalOutput(std::string OutputString, std::vector<char> FileBytes) 
     hex_string_vec.push_back(hex_string);
     hex_string = "";
 
-    std::cerr << hex_string_vec.size();
+    std::cerr << hex_string_vec.size() << std::endl;
+    std::cerr << bytes_string_vec.size() << std::endl;
 
     for (size_t i = 0; i < hex_string_vec.size(); i++) {
-        std::cout << hex_string_vec[i] << " " << bytes_string_vec[i] << std::endl;
+        std::cout << hex_string_vec[i] << "\t" << bytes_string_vec[i] << std::endl;
     }
 
 	return 0;
