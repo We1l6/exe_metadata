@@ -56,7 +56,7 @@ std::string BytesToHex(const std::vector<char>& FileBytes) {
 	std::stringstream ss;
 	std::string HexString;
 
-	ss << std::hex << std::setfill('0');
+	// ss << std::hex << std::setfill('0');
 	
 	for (char FileByte : FileBytes)
 	{
@@ -64,15 +64,14 @@ std::string BytesToHex(const std::vector<char>& FileBytes) {
 	}
 
 	HexString = ss.str();
-
 	return HexString;
 
 }
 
 int PrettyTerminalOutput(std::string OutputString, std::vector<char> FileBytes) {
 	
-	unsigned long int hex_string_len = OutputString.length();
-    unsigned long int bytes_vec_size = FileBytes.size();
+	unsigned long long int hex_string_len = OutputString.length();
+    unsigned long long int bytes_vec_size = FileBytes.size();
 	std::cerr << "Output string len is " << hex_string_len << std::endl;
 
     // let's insert spaces before iterating
