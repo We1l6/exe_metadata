@@ -35,31 +35,32 @@ std::vector<char> ReadBinaryFile(const std::string& filename) {
 		std::cerr << "File was not opened" << std::endl;
 		exit(1);
 	}
-	
+
+    return {};
 }
 
-int WriteToFile(std::vector<char> FileBytes) {
+int WriteToFile(const std::vector<char>& FileBytes) {
 
 	std::ofstream ofs;
 	ofs.open("out.txt", std::ios::binary | std::ios::out);
-	for (unsigned long long int i = 0; i < FileBytes.size(); i++) {
-		ofs << FileBytes[i];
+	for (char FileByte : FileBytes) {
+		ofs << FileByte;
 	}
 	ofs.close();
 	return 0;
 
 }
 
-std::string BytesToHex(std::vector<char> FileBytes) {
+std::string BytesToHex(const std::vector<char>& FileBytes) {
 
 	std::stringstream ss;
 	std::string HexString;
 
 	ss << std::hex << std::setfill('0');
 	
-	for (unsigned long long int i = 0; i < FileBytes.size(); ++i)
+	for (char FileByte : FileBytes)
 	{
-		ss << std::setw(2) << static_cast<unsigned>(FileBytes[i]);
+		ss << std::setw(2) << static_cast<unsigned>(FileByte);
 	}
 
 	HexString = ss.str();
